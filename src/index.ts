@@ -1,15 +1,11 @@
-const message: string = "Welcome to Node Senior Lab!"; //global scope
-function printMessage(message: string) {
-  //functional scope
-  const msg: string = "sample messages"; //block scope -> declared using const
-  console.log("the message is ", message);
-  function getIt() {
-    return msg;
-  }
-
-  return getIt;
+var obj:any={
+name:"navya",
+value:function(){
+   console.log(this.name) //normal function get the object value
+},
+// nameValue:()=>{
+//     console.log(this.name) // arrow function do not get the this  value, that will search for the surrounding Object value
+// }
 }
-const getValue:Function=printMessage(message);
-const v1:string=getValue()
-console.log(v1)
 
+obj.value()
