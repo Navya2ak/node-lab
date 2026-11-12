@@ -1,11 +1,11 @@
-var obj:any={
-name:"navya",
-value:function(){
-   console.log(this.name) //normal function get the object value
-},
-// nameValue:()=>{
-//     console.log(this.name) // arrow function do not get the this  value, that will search for the surrounding Object value
-// }
+class User {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    ((this.name = name), (this.age = age));
+  }
 }
 
-obj.value()
+const user = new User("navya", 24);
+console.log(user);
