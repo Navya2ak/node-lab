@@ -1,10 +1,21 @@
-class User{
-name:string;
-age:string;
-constructor(name:string,age:string){
-this.name=name,
-this.age=age
+
+class User {
+    #name: string;
+    #age: number;
+
+    constructor(name: string, age: number) {
+        this.#name = name;
+        this.#age = age;
+    }
+
+   get getDetails(): string {
+        return `${this.#name} is ${this.#age} years old`;
+    }
 }
-}
-const user=new User("navya","24");
-console.log(user)
+
+const user = new User("Navya", 27);
+
+console.log(user.getDetails);
+
+// Error: Private field cannot be accessed outside the class
+// console.log(user.#name);
