@@ -1,44 +1,17 @@
-interface BankDetails{
-    name:string,
-    balance:number
-}
+const getUserDetails = require("./user.js");
 
 class Bank {
-  #name: string;
-  #balance: number;
+  #balance = 100;
 
-  constructor(name: string, balance: number) {
-    this.#name = name;
-    this.#balance = balance;
-  }
-
-  get getBankDetails(): BankDetails {
-    return {
-      name: this.#name,
-      balance: this.#balance,
-    };
-  }
-
-  set deposit(amount: number) {
-    if (amount <= 0) {
-      throw new Error("Deposit amiable amount");
-    }
-    this.#balance += amount;
-  }
-
-  set withdraw(amount:number){
-    if(amount<0){
-        throw new Error("Amount must be positive value")
-    }
-    if(this.#balance-amount<0){
-        throw new Error("Minimum balance is zero")
-    }
-
-    this.#balance-=amount;
+  get getBalance() {
+    return this.#balance;
   }
 }
 
-const bank=new Bank("navya",100)
-bank.withdraw = 10;
-bank.deposit=400;
-console.log(bank.getBankDetails)
+const bank = new Bank();
+
+const method = bank.getBalance;
+
+console.log(method);
+
+getUserDetails();
