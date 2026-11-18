@@ -6,8 +6,8 @@ export interface UserDetails {
 export default function getUserDetails(): UserDetails {
   console.log("here");
   return {
-    name: "Navya",
-    role: "BE",
+    name: "john",
+    role: "software engineer",
   };
 }
 
