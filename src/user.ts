@@ -1,14 +1,15 @@
-interface UserDetails {
+export interface UserDetails {
   name: string;
   role: string;
 }
 
-function getUserDetails(): UserDetails {
-    console.log("here")
+export default function getUserDetails(): UserDetails {
+  console.log("here");
   return {
     name: "Navya",
     role: "BE",
   };
 }
 
-module.exports = getUserDetails;
+//named export import {}
+//using default keyword make to export the specific one

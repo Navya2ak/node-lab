@@ -1,5 +1,5 @@
-const getUserDetails = require("./user.js");
-
+//const getUserDetails = require("./user.ts");
+import getUserDetails from "./user.js"
 class Bank {
   #balance = 100;
 
