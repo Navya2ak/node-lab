@@ -1,5 +1,23 @@
 //const getUserDetails = require("./user.ts");
-import getUserDetails , {UserDetails} from "./user.js"
+import getUserDetails, {
+  getAllRoles,
+  getAllUserNames,
+  getAllUsers,
+} from "./user.js";
+
+Promise.all([getAllRoles(), getAllUserNames(), getAllUsers()]).then((res) =>
+  console.log("all", res),
+);
+Promise.allSettled([getAllRoles(), getAllUserNames(), getAllUsers()]).then(
+  (res) => console.log("settled", res),
+);
+Promise.race([getAllRoles(), getAllUserNames(), getAllUsers()]).then((res) =>
+  console.log("race", res),
+);
+Promise.any([getAllRoles(), getAllUserNames(), getAllUsers()]).then((res) =>
+  console.log("any", res),
+);
+
 class Bank {
   #balance = 100;
 
